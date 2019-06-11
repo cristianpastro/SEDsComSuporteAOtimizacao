@@ -1,0 +1,5 @@
+fila.c:3:6:inicializafila	0	static
+fila.c:9:5:filacheia	0	static
+fila.c:15:5:filavazia	0	static
+fila.c:21:7:enfila	8	static
+fila.c:38:7:desenfila	8	static

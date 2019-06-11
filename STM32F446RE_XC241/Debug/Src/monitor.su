@@ -1,0 +1,6 @@
+monitor.c:33:10:vGetTimerForRunTimeStats	4	static
+monitor.c:37:6:MonitorPutChar	16	static
+monitor.c:44:6:vConfigureTimerForRunTimeStats	8	static
+monitor.c:50:6:MonitorPutString	24	static
+monitor.c:68:6:MonitorGetChar	40	static
+monitor.c:83:6:StartMonitorTask	88	static

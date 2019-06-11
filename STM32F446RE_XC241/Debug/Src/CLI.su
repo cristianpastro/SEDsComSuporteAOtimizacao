@@ -1,0 +1,4 @@
+CLI.c:50:6:CLIPutChar	16	static
+CLI.c:59:6:CLIPutString	24	static
+CLI.c:77:6:CLIGetChar	40	static
+CLI.c:99:6:StartTerminalTask	56	static

@@ -1,0 +1,6 @@
+printf-stdarg.c:30:6:printchar	16	static
+printf-stdarg.c:45:5:prints	40	static
+printf-stdarg.c:75:5:printi	64	static
+printf-stdarg.c:118:5:print	64	static
+printf-stdarg.c:182:5:printf_UART	16	static
+printf-stdarg.c:191:5:sprintf	28	static
