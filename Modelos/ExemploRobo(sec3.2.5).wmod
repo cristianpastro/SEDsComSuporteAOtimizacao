@@ -1,0 +1,1679 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Module Name="ExemploRobo(sec3" xmlns="http://waters.sourceforge.net/xsd/module" xmlns:ns2="http://waters.sourceforge.net/xsd/base" xmlns:ns3="http://waters.sourceforge.net/xsd/des">
+    <EventDeclList>
+        <EventDecl Kind="CONTROLLABLE" Name="insert_A1"/>
+        <EventDecl Kind="CONTROLLABLE" Name="insert_A2"/>
+        <EventDecl Kind="UNCONTROLLABLE" Name="remove_A1"/>
+        <EventDecl Kind="UNCONTROLLABLE" Name="remove_A2"/>
+        <EventDecl Kind="UNCONTROLLABLE" Name="insert_B1"/>
+        <EventDecl Kind="UNCONTROLLABLE" Name="insert_B2"/>
+        <EventDecl Kind="CONTROLLABLE" Name="Go_A1"/>
+        <EventDecl Kind="CONTROLLABLE" Name="Go_A2"/>
+        <EventDecl Kind="CONTROLLABLE" Name="Go_B1"/>
+        <EventDecl Kind="CONTROLLABLE" Name="Go_B2"/>
+        <EventDecl Kind="PROPOSITION" Name=":accepting"/>
+        <EventDecl Kind="CONTROLLABLE" Name="GoBat"/>
+        <EventDecl Kind="UNCONTROLLABLE" Name="charge"/>
+    </EventDeclList>
+    <ComponentList>
+        <SimpleComponent Kind="PLANT" Name="Buff_A1">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="128" Y="160"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-1" Y="-13"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="PLANT" Name="Buff_A2">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="128" Y="160"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-1" Y="-13"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="PLANT" Name="T1">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="48" Y="176"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <PointGeometry>
+                            <Point X="160" Y="176"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S2">
+                        <PointGeometry>
+                            <Point X="256" Y="176"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S3">
+                        <PointGeometry>
+                            <Point X="160" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-17" Y="-23"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="104" Y="160"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S2">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="remove_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-30" Y="-23"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="208" Y="160"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S2" Target="S3">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-17" Y="1"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <EndPointGeometry>
+                            <Point X="160" Y="240"/>
+                        </EndPointGeometry>
+                    </Edge>
+                    <Edge Source="S3" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-30" Y="2"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <StartPointGeometry>
+                            <Point X="160" Y="240"/>
+                        </StartPointGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="PLANT" Name="T2">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="48" Y="176"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <PointGeometry>
+                            <Point X="160" Y="176"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S2">
+                        <PointGeometry>
+                            <Point X="256" Y="176"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S3">
+                        <PointGeometry>
+                            <Point X="160" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-17" Y="-23"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="104" Y="160"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S2">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="remove_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-30" Y="-23"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="208" Y="160"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S2" Target="S3">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-17" Y="1"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <EndPointGeometry>
+                            <Point X="160" Y="240"/>
+                        </EndPointGeometry>
+                    </Edge>
+                    <Edge Source="S3" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-30" Y="2"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <StartPointGeometry>
+                            <Point X="160" Y="240"/>
+                        </StartPointGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="SPEC" Name="Buff_A1_esp">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="64" Y="208"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="144" Y="208"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-26" Y="-24"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="104" Y="192"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="remove_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-34" Y="5"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="104" Y="224"/>
+                        </SplineGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="SPEC" Name="Buff_A2_esp">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="64" Y="208"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="144" Y="208"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-26" Y="-24"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="104" Y="192"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="remove_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-32" Y="1"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="104" Y="224"/>
+                        </SplineGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="SPEC" Name="Baterry">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="96" Y="192"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <PointGeometry>
+                            <Point X="192" Y="192"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="GoBat"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-20" Y="-24"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="144" Y="176"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A1"/>
+                            <SimpleIdentifier Name="Go_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-20" Y="3"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="144" Y="208"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="charge"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="4" Y="-11"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="240" Y="173"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A1"/>
+                            <SimpleIdentifier Name="Go_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-26" Y="-40"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="42" Y="153"/>
+                        </SplineGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="SPEC" Name="ExcBaterry">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="128" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="224" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A1"/>
+                            <SimpleIdentifier Name="Go_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-20" Y="-32"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="176" Y="224"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B1"/>
+                            <SimpleIdentifier Name="insert_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-23" Y="2"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="176" Y="256"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="GoBat"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-26" Y="24"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="72" Y="230"/>
+                        </SplineGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="SPEC" Name="ConAandBAT">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="96" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="208" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S2">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="304" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-32" Y="-35"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="152" Y="224"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-20" Y="-1"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="152" Y="256"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="GoBat"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-8" Y="-42"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="48" Y="227"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S2">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-21" Y="-25"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="256" Y="224"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S2" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-23" Y="1"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="256" Y="256"/>
+                        </SplineGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="SPEC" Name="ConAandBAT2">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="96" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="208" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S2">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="320" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-32" Y="-35"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="152" Y="224"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-20" Y="-1"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="152" Y="256"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="GoBat"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-8" Y="-42"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="48" Y="227"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S2">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-30" Y="-26"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="264" Y="224"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S2" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-23" Y="7"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="264" Y="256"/>
+                        </SplineGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="PLANT" Name="T_Charge">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="64" Y="272"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1">
+                        <PointGeometry>
+                            <Point X="160" Y="272"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="0" Y="10"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0" Target="S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="GoBat"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-22" Y="-28"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="112" Y="256"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1" Target="S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="charge"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-23" Y="1"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="112" Y="288"/>
+                        </SplineGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+        <SimpleComponent Kind="SUPERVISOR" Name="sup(Baterry||Buff_A1||Buff_A1_esp||Buff_A2||Buff_A2_esp||ConAandBAT||ConAandBAT2||ExcBaterry||T1||T2||T_Charge)">
+            <Graph>
+                <NodeList>
+                    <SimpleNode Initial="true" Name="S0.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="32" Y="464"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="633" Y="-318"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S0.S0.S1.S1.S0.S2.S0">
+                        <PointGeometry>
+                            <Point X="183" Y="156"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S0.S0.S1.S1.S0.S3.S0">
+                        <PointGeometry>
+                            <Point X="223" Y="249"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S0.S1.S0.S1.S2.S0.S0">
+                        <PointGeometry>
+                            <Point X="528" Y="547"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S0.S1.S0.S1.S3.S0.S0">
+                        <PointGeometry>
+                            <Point X="512" Y="240"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="302" Y="322"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S1.S0.S1.S1.S0.S1.S0">
+                        <PointGeometry>
+                            <Point X="332" Y="161"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S1.S0.S2.S1.S0.S2.S0">
+                        <PointGeometry>
+                            <Point X="78" Y="181"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S1.S0.S2.S1.S0.S3.S0">
+                        <PointGeometry>
+                            <Point X="148" Y="266"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S1.S1.S1.S1.S2.S0.S0">
+                        <PointGeometry>
+                            <Point X="476" Y="550"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S0.S0.S1.S1.S1.S1.S3.S0.S0">
+                        <PointGeometry>
+                            <Point X="688" Y="224"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="32" Y="640"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="544" Y="-307"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S0.S1.S0.S1.S1.S0.S0">
+                        <PointGeometry>
+                            <Point X="545" Y="402"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S0.S1.S1.S1.S0.S2.S0">
+                        <PointGeometry>
+                            <Point X="173" Y="206"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="-7" Y="29"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S0.S1.S1.S1.S0.S3.S0">
+                        <PointGeometry>
+                            <Point X="207" Y="313"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S0.S2.S0.S1.S2.S0.S0">
+                        <PointGeometry>
+                            <Point X="489" Y="647"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S0.S2.S0.S1.S3.S0.S0">
+                        <PointGeometry>
+                            <Point X="413" Y="566"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <EventList>
+                            <SimpleIdentifier Name=":accepting"/>
+                        </EventList>
+                        <PointGeometry>
+                            <Point X="32" Y="736"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="625" Y="-463"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S1.S1.S1.S1.S0.S1.S0">
+                        <PointGeometry>
+                            <Point X="48" Y="800"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="350" Y="24"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S1.S1.S1.S1.S1.S0.S0">
+                        <PointGeometry>
+                            <Point X="208" Y="768"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S1.S1.S2.S1.S0.S2.S0">
+                        <PointGeometry>
+                            <Point X="66" Y="234"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S1.S1.S2.S1.S0.S3.S0">
+                        <PointGeometry>
+                            <Point X="144" Y="321"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S1.S2.S1.S1.S2.S0.S0">
+                        <PointGeometry>
+                            <Point X="435" Y="652"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S0.S0.S1.S0.S1.S2.S1.S1.S3.S0.S0">
+                        <PointGeometry>
+                            <Point X="358" Y="562"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0">
+                        <PointGeometry>
+                            <Point X="618" Y="154"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S1">
+                        <PointGeometry>
+                            <Point X="579" Y="144"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0">
+                        <PointGeometry>
+                            <Point X="515" Y="109"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S1">
+                        <PointGeometry>
+                            <Point X="596" Y="54"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0">
+                        <PointGeometry>
+                            <Point X="629" Y="233"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S1">
+                        <PointGeometry>
+                            <Point X="681" Y="139"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <PointGeometry>
+                            <Point X="533" Y="204"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                    <SimpleNode Name="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S1">
+                        <PointGeometry>
+                            <Point X="648" Y="86"/>
+                        </PointGeometry>
+                        <LabelGeometry Anchor="NW">
+                            <Point X="5" Y="5"/>
+                        </LabelGeometry>
+                    </SimpleNode>
+                </NodeList>
+                <EdgeList>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0" Target="S0.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="170" Y="399"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0" Target="S0.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="36" Y="552"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0" Target="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="GoBat"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="302" Y="282"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S1.S1.S0.S2.S0" Target="S0.S0.S0.S0.S0.S0.S1.S1.S0.S3.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="202" Y="195"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S1.S1.S0.S2.S0" Target="S0.S0.S0.S0.S1.S0.S2.S1.S0.S2.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="123" Y="156"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S1.S1.S0.S2.S0" Target="S0.S0.S1.S0.S0.S1.S1.S1.S0.S2.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="171" Y="173"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S1.S1.S0.S3.S0" Target="S0.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="135" Y="362"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S1.S1.S0.S3.S0" Target="S0.S0.S0.S0.S1.S0.S2.S1.S0.S3.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="179" Y="255"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S0.S1.S1.S0.S3.S0" Target="S0.S0.S1.S0.S0.S1.S1.S1.S0.S3.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="210" Y="282"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S1.S0.S1.S2.S0.S0" Target="S0.S0.S0.S0.S0.S1.S0.S1.S3.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="529" Y="415"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S1.S0.S1.S2.S0.S0" Target="S0.S0.S0.S0.S1.S1.S1.S1.S2.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="509" Y="556"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S1.S0.S1.S2.S0.S0" Target="S0.S0.S1.S0.S0.S2.S0.S1.S2.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="519" Y="606"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S1.S0.S1.S3.S0.S0" Target="S0.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="266" Y="336"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S1.S0.S1.S3.S0.S0" Target="S0.S0.S0.S0.S1.S1.S1.S1.S3.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="604" Y="221"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S0.S1.S0.S1.S3.S0.S0" Target="S0.S0.S1.S0.S0.S2.S0.S1.S3.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="472" Y="430"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0" Target="S0.S0.S0.S0.S1.S0.S1.S1.S0.S1.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="311" Y="236"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0" Target="S0.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="137" Y="505"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S0.S1.S1.S0.S1.S0" Target="S0.S0.S0.S0.S0.S0.S1.S1.S0.S2.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="remove_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="255" Y="145"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S0.S1.S1.S0.S1.S0" Target="S0.S0.S1.S0.S1.S1.S1.S1.S0.S1.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="240" Y="415"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S0.S2.S1.S0.S2.S0" Target="S0.S0.S0.S0.S1.S0.S2.S1.S0.S3.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="103" Y="220"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S0.S2.S1.S0.S2.S0" Target="S0.S0.S1.S0.S1.S1.S2.S1.S0.S2.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="58" Y="203"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S0.S2.S1.S0.S3.S0" Target="S0.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S0.S2.S1.S0.S3.S0" Target="S0.S0.S1.S0.S1.S1.S2.S1.S0.S3.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="135" Y="296"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S1.S1.S1.S2.S0.S0" Target="S0.S0.S0.S0.S1.S1.S1.S1.S3.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="559" Y="384"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S1.S1.S1.S2.S0.S0" Target="S0.S0.S1.S0.S1.S2.S1.S1.S2.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="458" Y="610"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S1.S1.S1.S3.S0.S0" Target="S0.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="504" Y="299"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S0.S0.S1.S1.S1.S1.S3.S0.S0" Target="S0.S0.S1.S0.S1.S2.S1.S1.S3.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="454" Y="406"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0" Target="S0.S0.S1.S0.S0.S1.S0.S1.S1.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="313" Y="535"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0" Target="S0.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="40" Y="688"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S1.S0.S1.S1.S0.S0" Target="S0.S0.S0.S0.S0.S1.S0.S1.S2.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="remove_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="549" Y="479"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S1.S0.S1.S1.S0.S0" Target="S0.S0.S1.S0.S1.S1.S1.S1.S1.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="402" Y="535"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S1.S1.S1.S0.S2.S0" Target="S0.S0.S1.S0.S0.S1.S1.S1.S0.S3.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="183" Y="259"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S1.S1.S1.S0.S2.S0" Target="S0.S0.S1.S0.S1.S1.S2.S1.S0.S2.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="110" Y="216"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S1.S1.S1.S0.S3.S0" Target="S0.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="99" Y="463"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S1.S1.S1.S0.S3.S0" Target="S0.S0.S1.S0.S1.S1.S2.S1.S0.S3.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="169" Y="323"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S2.S0.S1.S2.S0.S0" Target="S0.S0.S1.S0.S0.S2.S0.S1.S3.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="453" Y="616"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S2.S0.S1.S2.S0.S0" Target="S0.S0.S1.S0.S1.S2.S1.S1.S2.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="464" Y="663"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S2.S0.S1.S3.S0.S0" Target="S0.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S0.S2.S0.S1.S3.S0.S0" Target="S0.S0.S1.S0.S1.S2.S1.S1.S3.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="382" Y="575"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0" Target="S0.S0.S1.S0.S1.S1.S1.S1.S0.S1.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="-36" Y="-19"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0" Target="S0.S0.S1.S0.S1.S1.S1.S1.S1.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="6" Y="-23"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S1.S1.S1.S1.S0.S1.S0" Target="S0.S0.S1.S0.S0.S1.S1.S1.S0.S2.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="remove_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="141" Y="497"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S1.S1.S1.S1.S1.S0.S0" Target="S0.S0.S0.S0.S1.S1.S1.S1.S2.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="remove_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="337" Y="643"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S1.S1.S2.S1.S0.S2.S0" Target="S0.S0.S1.S0.S1.S1.S2.S1.S0.S3.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="91" Y="282"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S1.S1.S2.S1.S0.S3.S0" Target="S0.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="66" Y="509"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S1.S2.S1.S1.S2.S0.S0" Target="S0.S0.S1.S0.S1.S2.S1.S1.S3.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="390" Y="620"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S0.S0.S1.S0.S1.S2.S1.S1.S3.S0.S0" Target="S0.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_B1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="216" Y="665"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0" Target="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="571" Y="121"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0" Target="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="634" Y="194"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S1" Target="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="charge"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="603" Y="145"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S1" Target="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S0.S0.S0.S0.S0.S0.S1" Target="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="637" Y="134"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0" Target="S0.S0.S0.S0.S1.S0.S1.S1.S0.S1.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="421" Y="124"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0" Target="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S1" Target="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="charge"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="555" Y="70"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S0.S0.S1.S0.S1.S0.S0.S0.S1" Target="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="629" Y="58"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0" Target="S0.S0.S1.S0.S0.S1.S0.S1.S1.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="598" Y="322"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0" Target="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                    </Edge>
+                    <Edge Source="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S1" Target="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="charge"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="668" Y="187"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S1.S0.S0.S1.S0.S0.S0.S0.S1" Target="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S1">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="insert_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="676" Y="105"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0" Target="S0.S0.S1.S0.S1.S1.S1.S1.S0.S1.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A2"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="285" Y="491"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0" Target="S0.S0.S1.S0.S1.S1.S1.S1.S1.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="Go_A1"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="382" Y="489"/>
+                        </SplineGeometry>
+                    </Edge>
+                    <Edge Source="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S1" Target="S1.S0.S1.S0.S1.S1.S1.S0.S0.S0.S0">
+                        <LabelBlock>
+                            <SimpleIdentifier Name="charge"/>
+                            <LabelGeometry Anchor="NW">
+                                <Point X="0" Y="10"/>
+                            </LabelGeometry>
+                        </LabelBlock>
+                        <SplineGeometry>
+                            <Point X="599" Y="143"/>
+                        </SplineGeometry>
+                    </Edge>
+                </EdgeList>
+            </Graph>
+        </SimpleComponent>
+    </ComponentList>
+</Module>
